@@ -34,10 +34,47 @@ difftime(Sys.Date(),df2$dob,unit ='weeks')
 (df2$age =ceiling(as.numeric(difftime(Sys.Date(),df2$dob,unit = "weeks"))/52.25))
 head(df2$age)
 
+
 #filter
 df2$age>30 # by age
 df2[df2$age>30,][1:2]# [1:2] means first two columns,otherwise it will give logical ans
+df2[df2$age>30,c(1,2,3)]
 
 df2[df2$gender == 'M' & df2$course =="PGDDS",][1:2]
+df2[df2$gender == 'M' & df2$course =="PGDDS",c('rollno','name')]
+df2[df2$gender == 'M' & df2$course =="PGDDS",c(1,2)]
+
+summary(df2)
 
 
+# Save Data
+write.csv(x=df2,file = './data/apoorva.csv') # save to csv
+# you can save to other formats using other tools/options
+?write.csv
+saveRDS(object = df2,file = './data/ak.RDS') # only 1 object at a time
+markstotal = runif(11,50,150)
+save(markstotal,df2,file = './data/ak2.RData') #save multiple objects in R
+markstotal
+round(markstotal)
+save.image(file = './data/ak3.RData') #save all current objects/multiple objects
+save.image()#save to default RData
+
+
+#load objects from saved locations
+#from CSV
+#from RDS
+readRDS(file = './data/ak.RDS') #loads and prints
+mydata = readRDS(file='./data/ak.RDS') #save it into object
+#load() # for data in R.Data this happens automatically
+load(file ='./data/ak2.RData')
+load(file ='./data/ak3.RData')
+
+#[1:2] # by course & gender
+
+#find from indices
+df2[df2$hostel==T,][1:2] #stay in hostel
+which(df2$hostel==T) # using which command tells indices
+df2[which(df2$hostel ==T),][c(1,2,4,5)] # in hostel
+df2[which(!df2$hostel ==T),][c(1,2,4,5)] # not in hostel
+df2[which(df2$hostel ==F),][c(1,2,4,5)] # not in hostel
+df2[which(!df2$hostel ==T)]
