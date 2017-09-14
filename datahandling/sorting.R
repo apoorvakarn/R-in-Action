@@ -56,3 +56,7 @@ sort(marks2, na.last = F)
 
 rank(marks2, na.last = T)
 rank(marks2, na.last = F)
+
+#14sept17
+#sorting
+df2
