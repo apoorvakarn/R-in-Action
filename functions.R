@@ -7,6 +7,14 @@ x=2;y=3
 (sumofnos=x+y)
 x1=c(1:10)
 x1
+
+apoorva <- function(x, y) {
+  sum2 = x + y
+  return(sum2)
+}
+x=apoorva(5,6)
+x
+apoorva(7)
 sumofnos=sum(x1)
 sumofnos
 fsum1=function(x1){
@@ -69,7 +77,9 @@ area1<- function(mypi=pi, r) {
   return (areacircle)
 }
 area1(r=14)
-
+area1(mypi=4,r=2)
+area1(r=3,mypi=2)
+area1(3,2)
 #we can directly return the value
 area2 <- function(pi, r) {
   
@@ -98,7 +108,7 @@ lsf.str(pos=2)#relate to second package in the list
 lsf.str(pos=3)
 lsf.str(pos=4)
 lsf.str(pos=5)
-
+save(area3,file='./datahandling/mfn.RData')
 save(area,area1,area2,area3,fsum1,fsum2,fsum2a,fsum3,file='./datahandling/mfn.RData')
 load(file = './datahandling/mfn.RData')
 area     
