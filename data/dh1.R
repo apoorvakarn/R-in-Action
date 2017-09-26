@@ -78,3 +78,22 @@ df2[which(df2$hostel ==T),][c(1,2,4,5)] # in hostel
 df2[which(!df2$hostel ==T),][c(1,2,4,5)] # not in hostel
 df2[which(df2$hostel ==F),][c(1,2,4,5)] # not in hostel
 df2[which(!df2$hostel ==T)]
+
+aggregate(cbind(df3$fees,df3$excel), list(DScourse,gender=df3$gender),sum)
+cat(names(df3))
+split(df3[1:3],df3$gender)
+class(split(df3[1:3],df3$gender))
+split(df3[1:3],df3$gender)$F
+
+
+# lag
+v1= (1:20)
+v1
+diff(v1,2)
+diff(v1,5)
+v2 = seq(10,50,10)
+v2
+trunc(4.2)
+round(4.2)
+sqrt(4)
+sqrt(57587745)

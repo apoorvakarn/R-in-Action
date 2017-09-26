@@ -1,7 +1,7 @@
 # Margin Tables
 
 parties1 = c('BJP',"Congress","SP","AAP")
-length(parties)
+length(parties1)
 states1 = c('UP','Delhi','Haryana','Punjab','UK')
 length(states1)
 set.seed(1234)
@@ -12,8 +12,10 @@ df
 (col1 = rep(parties1,each=5))
 (col2 = rep(states1,times =4))  
 length(col2)
+
 length(col1)
 cbind(col1,col2)
+
 party = factor(col1)
 state = factor(col2)
 df1 = data.frame(party,state,mp)
@@ -25,6 +27,7 @@ tabulate(df1$col1) #one coloumn factor type
 
 #table(df1)
 table(df1$party)
+
 table(df1$state)
 table(df1[,c('party','state')])
 table(df1[,c('party','state')], dnn= list('Political Parties','States Of India'))
