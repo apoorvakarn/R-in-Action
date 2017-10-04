@@ -100,4 +100,68 @@ difftime(Sys.Date(),df4$dob,unit = "weeks")
 df4$age= ceiling(as.numeric(difftime(Sys.Date(),df4$dob,unit = "weeks"))/52.5)
 df4$age
 # creating another table
+View(df4)
+df5 <- df4[c("rollno","rpgm","excel","sql","stats")]
+View(df5)
+df5$sum <- c(df5$rpgm+df5$excel+df5$sql+df5$stats)
+addmargins(df5,1,mean)
+addmargins(df5,1,median)
+# creating another table
+table(df4$course,df4$gender)
+(prop.table(table(df4$course,df4$gender)))
+p1= (prop.table(table(df4$course,df4$gender)))
+p1
+rowSums(p1)
+rowSums(p1)
+addmargins(p1)
+addmargins(p1,1,sum)
+addmargins(as.table(as.matrix(df5)),c(2,1,1),list(sum,mean,median))#addmargins to create row sum,column means,medians
+#creating course vs gender summary & proportion tables
+t1 <- table(df4$course,df4$gender)
+addmargins(t1)#summary of course vs gender
+prop.table(t1)#proportions of course-gender table
+#Grade function & Rank
+df6 <- df4[,c(1,2,11,12,13,14)]# creating dataframe df3c having rollno,names & subject marks
+df6
+df6$total <- rowMeans(df4[,c(3:6)])#creating total column
+df6
+grades <- function(x){
+  if (x > 70){
+    print('A')
+  } else if (x >= 60 & x <= 70){
+    print('B')
+  } else {
+    print('C')
+  }
+} # creating function for grades
+for (i in c(1:12)){
+  df6$grade[i] <- grades(df6$total[i])# for loop for giving grades according to avg. marks per row
+}
+df6
+df6$ranks <- rank(-df6$total)#rank 1 to largest total marks
+df6
+df6$name[df6$ranks==5]#gives Shruti Sinha-5th rank holder
+df6
+#Rowwise & Columnwise means-Pending
+df7 <- df4[,c(3,11,12,13,14)]
+df4
+
+#split wrt course,wrt gender-hostel
+split(df4[1:3],df4$course)#split according to course
+split(df4[1:3],list(df4$gender,df4$hostel))#split wrt gender-hostel
+#adding bigdata marks and scaling
+bigdata <- ceiling(runif(12,100,150))
+bigdata
+df8 <- df4#creating new dataframe - df8
+df8
+df8$bigdata <- bigdata#adding bigdata to df8
+df8
+?scale
+df8$bigdataS <- scale(df8$bigdata,center=F)#scaling bigdata marks
+df8
+#creating barplot
+df9 <- df8[,c('rpgm','excel','sql','stats','bigdata')]
+df9
+g1 <- colMeans(df9)
+barplot(g1,main = 'Average Marks',ylim=c(0,140))#barplot of average marks
 

@@ -7,6 +7,7 @@ length(states1)
 set.seed(1234)
 mp=ceiling(runif(20,25,50))
 sum(mp)
+
 df=data.frame(parties1,states1,mp)
 df
 (col1 = rep(parties1,each=5))
