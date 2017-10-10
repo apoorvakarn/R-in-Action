@@ -130,6 +130,22 @@ print(area,useSource = F)
 #print command and optios
 pi
 print(pi)
+
 print(pi,digits=2)
 ?print
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
