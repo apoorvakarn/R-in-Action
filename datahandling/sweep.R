@@ -16,3 +16,4 @@ dy
 sweep(M,1,dy, FUN = '-')
 sweep(M,1,dy, FUN = '+')
 sweep(M,c(1,2),dx, FUN = '+')
+sweep(M,c(1,2),c(dx,dy), FUN = '+')
