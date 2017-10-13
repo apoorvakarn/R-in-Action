@@ -35,3 +35,11 @@ a=c(7,4,10,9,15,12,7,9,7)
 mean(a)
 #median----
 median(a)
+#mode----
+x = c(2,3,4,4,4,5,5)
+library(modeest)
+m = mlv(x,method = "mfv")
+m
+#getmode(x)----
+fivenum(x)
+?mlv
