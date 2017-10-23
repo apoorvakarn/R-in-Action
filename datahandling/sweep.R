@@ -10,10 +10,10 @@ cbind(M, M+c(1,2,3))
 dx= colMeans(M)
 dx
 colSums(M)
-sweep(M,2,dx, FUN = '-')
+sweep(M,1,dx, FUN = '-')
 dy = rowMeans(M)
 dy
-sweep(M,1,dy, FUN = '-')
+sweep(M,2,dy, FUN = '-')
 sweep(M,1,dy, FUN = '+')
 sweep(M,c(1,2),dx, FUN = '+')
 sweep(M,c(1,2),c(dx,dy), FUN = '+')
