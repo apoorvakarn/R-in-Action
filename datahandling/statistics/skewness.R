@@ -1,0 +1,9 @@
+library(timeSeries)
+mtcars
+colQuantiles(mtcars)
+colSkewness(mtcars)
+?colQuantiles
+colStats(mtcars,mean)
+library(fBasics)
+?fBasics
+kurtosis(mtcars)
