@@ -60,7 +60,7 @@ a1 <- array(c(1:24),dim=c(4,3,2))
 a1
 sweep(a1,1,mean(a1),FUN="-")
 # dataframe - attitude-----
-attitude
+view(attitude)
 dim(attitude)
 # median of each column----
 med <- apply(attitude,2,median)
@@ -102,7 +102,7 @@ y
 # Now reshape the molten data - pending----
 dcast(y,subject~variable)
 # dataset - airquality----
-airquality
+view(airquality)
 # melting----
 y1 <- melt(airquality)
 #casting - pending----
