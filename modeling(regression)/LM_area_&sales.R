@@ -52,3 +52,7 @@ df$SSe
 df
 colSums(df)
 (R2=round(sum(df$SSr)/(sum(df$SSe)+ sum(df$SSr)),4))
+df
+n=length(x)
+stderror = sqrt(sum(df$SSe)/(n-2))
+stderror #deviations around the predicted line
