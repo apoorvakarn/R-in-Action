@@ -65,3 +65,6 @@ stderror #deviations around the predicted line
 p=1 #no of iv variables
 (MSR=SSR/p)
 (MSE=SSE/(n-p-1))
+fstat = MSR/MSE
+fstat
+
