@@ -22,3 +22,5 @@ fit3
 summary(fit3)
 plot(height,weight,main = "height vs weight")
 lines(women$height,fitted(fit3),col='red')
+car::scatterplot(weight~height,dat=women,spread = FALSE,lty.smooth=2,pch=19,main='women age 30-39',xlab='height(inches)',ylab='weight(lbs.)')
+?cars
