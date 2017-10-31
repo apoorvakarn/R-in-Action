@@ -9,11 +9,15 @@ sum(y)
 mean(x)
 mean(y)
 cov(x,y)
-cor(x,y)#sales is strongly correlated with area
-cor.test(x,y)#Pearson's product-moment correlation,#alternative hypothesis: true correlation is not equal to 0
+cor(x,y)#sales is strongly correlated with area----
+cor.test(x,y)#Pearson's product-moment correlation,#alternative hypothesis: true correlation is not equal to 0----
 plot(x,y,main='plot between x and y')
 abline(lm(y~x),col='green')
 text(3,6,"hello")
+text(x,y,labels = paste0(x,y),cex = 0.7,col = "red")
+text(x,y,labels = paste0('(',x,',',y,')'),cex = 0.7,col = "red")
+text(5,10,"apoorva")
+?text
 fit= lm(y~x)
 summary(fit)
 mean(x)
@@ -51,8 +55,13 @@ df$SSe = round((df$y-df$yh)^2,2)
 df$SSe
 df
 colSums(df)
-(R2=round(sum(df$SSr)/(sum(df$SSe)+ sum(df$SSr)),4))
+(SSR= round(sum(df$SSr),2))
+(SSE= round(sum(df$SSe),2))
+(R2=round(sum(df$SSr)/(sum(df$SSe)+ sum(df$SSr)),4))----#how much variation through one variable to another variable
 df
 n=length(x)
 stderror = sqrt(sum(df$SSe)/(n-2))
 stderror #deviations around the predicted line
+p=1 #no of iv variables
+(MSR=SSR/p)
+(MSE=SSE/(n-p-1))
