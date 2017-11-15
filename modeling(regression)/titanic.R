@@ -177,8 +177,6 @@ attach(training_set)
 # Fast backward Selection 
 fullmodel <- fastbw(lrm(factor(Survived) ~ Pclass + Sex + SibSp + Parch + Fare + Embarked + Title + FsizeD)                     ,rule="p")
 fullmodel
-```
-
 ```{r}
 # Predicting the Test set results
 prob_pred = predict(LogReg_model, type = 'response', newdata = test_set[c("Pclass","Title","FsizeD")])
@@ -187,11 +185,11 @@ Survived_pred = ifelse(prob_pred > 0.5, 1, 0)
 # Making the Confusion Matrix
 cm = table(test_set$Survived, Survived_pred)
 cm
-```
-
+``
 ```{r}
 # Accuracy
 Accuracy = (96+51)/length(test_set$Survived)
 Accuracy
-```
 
+
+install.packages(ROCR)
