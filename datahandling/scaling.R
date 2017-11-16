@@ -1,0 +1,5 @@
+(x = matrix(1:10,ncol =2))
+(centered.x = scale(x,center = T, scale = F))
+(centered.x = scale(x,center = c(2,7), scale = F))
+cov(centered.x)
+(centered.x = scale(x,center = T, scale = T))
