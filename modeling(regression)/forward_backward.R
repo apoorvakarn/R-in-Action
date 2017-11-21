@@ -4,7 +4,7 @@ str(mtcars)
 summary(mtcars)
 #forward
 #blank model
-(mtcars.lm=lm(mpg~1,data = mtcars))
+(mtcars.lm=lm(mpg~1,data = mtcars))#only intercept coeff. ie.(1)
 summary(mtcars.lm)
 #find best predictor
 add1(mtcars.lm,mtcars, test = "F")
