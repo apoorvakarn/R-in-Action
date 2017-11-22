@@ -37,3 +37,5 @@ table(probpred)
 install.packages(caret)
 xtab=table(mtcars$am,probpred)
 caret::confusionMatrix(t)
+car::vif(fit5) #multicollinearity
+sqrt(car::vif(fit5))>2
