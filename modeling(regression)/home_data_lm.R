@@ -24,6 +24,7 @@ filter(avg_price,x==max(x))
 (filter(data_home,sqft_living>2000 & sqft_living<=4000))
 nrow(filter(data_home,sqft_living>2000 & sqft_living<=4000))/nrow(data_home)
 library(caTools)
+set.seed(1234)
 split= sample.split(data_home$price,SplitRatio = 0.80)
 training_set= subset(data_home, split == TRUE)
 test_set= subset(data_home, split == FALSE)
@@ -58,6 +59,7 @@ house1
 house1$price
 predict(model2,house1)
 house2=data_home[which(data_home$id == "5309101200"),]
+
 house2
 house2$price
 predict(model2,house2)

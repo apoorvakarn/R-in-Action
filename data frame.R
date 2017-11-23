@@ -46,7 +46,7 @@ library(dplyr)
 search()
 rownames(df) = c("ID1","ID2","ID3")
 df
-colnames(df) = c("rollno","name")
+(colnames(df) = c("rollno","name"))
 mtcars$hp
 attach(mtcars)
 hp
@@ -68,3 +68,4 @@ z=factor(c("low","medium","high"),ordered=T,levels = c("high","medium","low"))
 z
 x1=factor(c("yes","no","yes"),levels = c("yes","no"))
 x1
+
