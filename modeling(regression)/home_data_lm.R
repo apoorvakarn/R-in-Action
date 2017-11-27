@@ -17,7 +17,7 @@ library(dplyr)
 #data_home = dataset %>%
   #mutate(locality=ifelse(substr(zipcode,1,3)==981,"Seattle vicinity","Seattle Main"))
 
-
+(data_home$zipcode = as.factor(data_home$zipcode))
 avg_price <- aggregate(data_home$price,list(data_home$zipcode),FUN=mean)
 str(avg_price)
 filter(avg_price,x==max(x))
@@ -26,18 +26,18 @@ nrow(filter(data_home,sqft_living>2000 & sqft_living<=4000))/nrow(data_home)
 library(caTools)
 set.seed(1234)
 split= sample.split(data_home$price,SplitRatio = 0.80)
-training_set= subset(data_home, split == TRUE)
-test_set= subset(data_home, split == FALSE)
+training_set= subset(data_home, split == TRUE,select = -c(id,date))
+test_set= subset(data_home, split == FALSE,select = -c(id,date))
 length(training_set[,1])
 length(test_set[,1])
 my_features = c('bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode')
 summary(data_home[,my_features])
 model1= lm(price~bedrooms +bathrooms+sqft_living+sqft_lot+floors+zipcode,data = training_set)
 model1
-summary(model1)
+summary(model1)# problem
+
 residuals(model1)
-RMSE=sqrt(sum(residuals(model1)^2 / length(training_set$id)))
-RMSE
+
 pred=predict(model1,test_set[,my_features])
 pred
 (rmsepred=sqrt((sum(pred-test_set$price)^2)/length(test_set$id)))
@@ -87,13 +87,4 @@ model3=fastbw(model2,rule="P")
 
 
 
-head(dataset)
-str(dataset)
-colSums(is.na(dataset))
-table(dataset$zipcode)
-dataset$zipcode[is.na(dataset$zipcode)] = "S"
-table(dataset$zipcode)
-max(dataset$price)
-nrow(dataset)
-my_features = lm['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode']
-(fit1 = lm(bedrooms~bathrooms + sqft_living + sqft_lot + floors + zipcode, data= dataset))
+
