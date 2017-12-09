@@ -1,9 +1,9 @@
 # cast & melt
 set.seed(1234)
-rollno = rep(c(10,11,12,13),4)
-sname = rep(c("achal","aporva","goldie","hitesh"),4)
-examunit = rep(c("u1","u2","u3","u4"),each=4)
-rpgm = rnorm(16,60,10)
+(rollno = rep(c(10,11,12,13),4))
+(sname = rep(c("achal","aporva","goldie","hitesh"),4))
+(examunit = rep(c("u1","u2","u3","u4"),each=4))
+(rpgm = rnorm(16,60,10))
 set.seed(1234)
 (rpgm= ceiling(rnorm(4*4,60,10)))
 set.seed(1234)
@@ -33,3 +33,4 @@ md2
 head(md2) # with proper labelling
 
 reshape::cast(md2,rollno + sname ~ subject, sum)
+

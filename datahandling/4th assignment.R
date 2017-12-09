@@ -3,6 +3,7 @@ df3= read.csv(file = './datahandling/dsstudents2.csv') #downloaded as csv and st
 df3
 str(df3)#checking the structure of df3
 df3$name <- as.character(df3$name)#converting df3$name from factor to character
+
 df3$dob <- as.Date(df3$dob,format='%d-%b-%y')#converting df3$dob from factor to date
 df3$email <- as.character(df3$email)#converting from factor to character
 df3$city <- as.character(df3$city)#converting from factor to character
