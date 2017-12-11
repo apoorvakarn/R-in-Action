@@ -7,6 +7,7 @@ set.seed(1234)
 set.seed(1234)
 (rpgm= ceiling(rnorm(4*4,60,10)))
 set.seed(1234)
+
 (sql= ceiling(rnorm(4*4,65,10)))
 df1=data.frame(rollno,sname,examunit,rpgm,sql)
 df1 #16 rows, 4 students,4units, 2 subjects

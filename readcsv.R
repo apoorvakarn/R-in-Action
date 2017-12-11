@@ -10,6 +10,7 @@ df2= read.csv(file = './files(R)/dsstudents.csv', stringsAsFactors = F)
 df2
 str(df2)
 head(df2)[1:4]
+
 head(df2)[3:4]
 df2$gender= factor(df2$gender)
 df2$gender

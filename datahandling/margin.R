@@ -48,6 +48,7 @@ ftable(df1) # where they fought and won # f means frequency
 #Margins--------------
 matresults = xtabs(mp ~ party+state, data=df1) # row parties, column states
 matresults
+
 ?margin.table
 str(matresults)
 margin.table(matresults,margin = NULL) # total mp 

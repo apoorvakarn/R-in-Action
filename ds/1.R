@@ -8,6 +8,7 @@ demo(graphics)
 history(1)
 
 options(digits = 3)
+
 x <- runif(20)
 summary(x)
 hist(x)

@@ -12,6 +12,7 @@ rowMeans(m1)
 colMeans(m1)
 addmargins(m1,1, FUN = mean)
 addmargins(m1,2, FUN = mean)
+
 addmargins(m1,c(1,2),mean)
 addmargins(m1,c(1,2), FUN = list(sum,mean))
 addmargins(m1,c(2,1), FUN = list(mean,sum))

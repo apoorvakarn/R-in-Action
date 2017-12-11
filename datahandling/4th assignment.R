@@ -1,9 +1,14 @@
 #4th assignment revision
+getwd()
+setwd("C:/rWork/rProjects/R-in-Action/datahandling")
+
+df3= read.csv(file = "dsstudents2.csv")
+
+
 df3= read.csv(file = './datahandling/dsstudents2.csv') #downloaded as csv and stored as df3
 df3
 str(df3)#checking the structure of df3
 df3$name <- as.character(df3$name)#converting df3$name from factor to character
-
 df3$dob <- as.Date(df3$dob,format='%d-%b-%y')#converting df3$dob from factor to date
 df3$email <- as.character(df3$email)#converting from factor to character
 df3$city <- as.character(df3$city)#converting from factor to character
@@ -53,6 +58,7 @@ df3[,c('excel')] = as.numeric(df3[,c('excel')])# converting chr to numeric
 df3[,c('sql')] = as.numeric(df3[,c('sql')])# converting chr to numeric
 df3[,c('stats')] = as.numeric(df3[,c('stats')])# converting chr to numeric
 levels(df3$gender)[3] <- 'M'
+
 df3$gender[is.na(df3$gender)] <- 'M'# replacing NA with M
 df3
 df3$rpgm[is.na(df3$rpgm)] <- mean(df3$rpgm,na.rm=T)#replacing NA with mean of rpgm
