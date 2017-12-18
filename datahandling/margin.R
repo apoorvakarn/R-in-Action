@@ -55,6 +55,7 @@ margin.table(matresults,margin = NULL) # total mp
 margin.table(matresults,margin = 1) # total mp in party rows
 margin.table(matresults,margin = 2) # total mp in state columns
 addmargins(matresults,1,sum)
+
 addmargins(matresults,2,sum)
 # if matresults was an array :dimensions=3
 margin.table(matresults,margin = 3) # error here
@@ -69,6 +70,8 @@ rowSums(p1)
 p2=round(prop.table(matresults,margin = 2),2)
 p2
 colSums(p2)
+
+
 addmargins(p2)
 addmargins(p2,1)
 addmargins(p2,2)

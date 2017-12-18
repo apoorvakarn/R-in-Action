@@ -1,5 +1,5 @@
 #question1----
-saledate = paste("2016-","0",c(1:6),"-01",sep ="")
+(saledate = paste("2016-","0",c(1:6),"-01",sep =""))
 dept = c("dept1","dept2")
 city = c("Delhi","Noida")
 dept = as.factor(dept)

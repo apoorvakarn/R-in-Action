@@ -12,7 +12,6 @@ setwd("C:/rWork/rProjects/R-in-Action/modeling(regression)")
 # Read Data
 dataset <- read.csv("home_data.csv",stringsAsFactors = F,na = "")
 # First few entries of the data
-
 library(dplyr)
 #data_home = dataset %>%
   #mutate(locality=ifelse(substr(zipcode,1,3)==981,"Seattle vicinity","Seattle Main"))

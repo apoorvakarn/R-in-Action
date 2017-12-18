@@ -1,5 +1,7 @@
 # ASSIGNMENT 4
-df3= read.csv(file = './datahandling/dsstudents2.csv') #downloaded as csv and stored as df3
+getwd()
+setwd("C:/rWork/rProjects/R-in-Action/datahandling")
+df3= read.csv(file = 'dsstudents2.csv') #downloaded as csv and stored as df3
 df3
 str(df3) #structure of df3
 
@@ -10,7 +12,7 @@ dim((df3)) # 11rows and 14 columns
 names(df3) # names of columns
 cat(names(df3))
 #df3a
-df3=read.csv(file = './datahandling/dsstudents2.csv',colClasses = colcls, as.is = T)
+df3=read.csv(file = 'dsstudents2.csv', colClasses = colcls, as.is = T)
 df3
 
 colcls =c('numeric', NA, 'factor', 'factor', 'logical', 'character','numeric',
@@ -169,3 +171,4 @@ df9
 g1 <- colMeans(df9)
 barplot(g1,main = 'Average Marks',ylim=c(0,140))#barplot of average marks
 aggregate(df4[c("rpgm","excel","sql","stats")],by= list(df4$course,df4$gender), FUN = sum)
+
