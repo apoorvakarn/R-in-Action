@@ -96,7 +96,9 @@ Model3<-glm(Survived~ Pclass+ Sex+ Age+ SibSp+ Embarked
 
 #Printing the results of the Model
 summary(Model3)
-
+#interpretation of the Model3
+Model3$coefficients
+exp(Model3$coefficients)
 ####################################################################################
 #################     Diagonstic Checking       #################################### 
 ####################################################################################
