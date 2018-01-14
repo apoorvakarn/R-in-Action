@@ -12,6 +12,7 @@ max(airlines)
 #Checking missing values----
 as.data.frame(colSums(is.na(airlines)))
 #Normalizing the Data for clustering----
+install.packages("reshape2")
 library(caret)
 preproc<-preProcess(airlines)
 airlinesNorm<-predict(preproc,airlines)
@@ -38,6 +39,11 @@ k<-5
 AirlineCluster_K<-kmeans(airlinesNorm, centers = k, iter.max = 1000)
 table(AirlineCluster_K$cluster)
 AirlineCluster_K$centers
+#Appending the Clusters Assignment
+Airlines_H<-data.frame(airlines,AirlineCluster)
+write.csv(Airlines_H,"Airlines_Hierarchical.csv", row.names = FALSE)
 
-
+#finding out the mean values of the variable in cluster----
+Bal_mean_k = aggregate(airlines,by=list(AirlineCluster_K$cluster),mean)
+Bal_mean_k
 
