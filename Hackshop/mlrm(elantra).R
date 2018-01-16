@@ -30,3 +30,6 @@ SST = sum((baselineSales - test$ElantraSales)^2)
 R2 = 1 - SSE/SST
 max(abs(salesPrediction - test$ElantraSales))
 which.max(abs(salesPrediction - test$ElantraSales))
+install.packages("stargazer")
+library(stargazer)
+stargazer(lmElantraM1,lmElantra2,lmElantra3,type = "text",out = "elmodel.txt")
