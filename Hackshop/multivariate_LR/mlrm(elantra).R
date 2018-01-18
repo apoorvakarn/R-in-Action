@@ -1,5 +1,5 @@
 getwd()
-setwd("C:/rWork/rProjects/R-in-Action/hackshop")
+setwd("C:/rWork/rProjects/R-in-Action/hackshop/multivariate_LR")
 edata=read.csv('elantra.csv', stringsAsFactors = FALSE, header = TRUE, as.is = TRUE)
 edata
 str(edata)
