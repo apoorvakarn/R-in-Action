@@ -1,3 +1,5 @@
+getwd()
+setwd("C:/rWork/rProjects/R-in-Action/hackshop/multivariate_LR")
 data=read.csv("elantra.csv",stringsAsFactors = FALSE,header = TRUE)
 data
 
