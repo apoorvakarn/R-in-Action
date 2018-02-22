@@ -1,0 +1,512 @@
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "CSG",
+new_contri_data$new_contri*0.45,
+new_contri_data$new_contri)
+###===================================for DEC division =============================================###
+####> Lowering the overall Contribution
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "DEC",
+new_contri_data$new_contri*0.60,
+new_contri_data$new_contri)
+##===================================for DOM division ========================================####
+###Lowering the overall Contribution (as no chn drivers a larger change)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "DOM",
+new_contri_data$new_contri*0.60,
+new_contri_data$new_contri)
+##===================================for ELC division ========================================####
+###Lowering the overall Contribution (as no chn drivers a larger change)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "ELC",
+new_contri_data$new_contri*0.70,
+new_contri_data$new_contri)
+##===================================for ENT division ========================================####
+###Lowering the overall Contribution (as no chn drivers a larger change)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "ENT",
+new_contri_data$new_contri*0.75,
+new_contri_data$new_contri)
+##===================================for JWA division ========================================####
+###Lowering the overall Contribution (as no chn drivers a larger change)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "JWA",
+new_contri_data$new_contri*0.75,
+new_contri_data$new_contri)
+##====================================for HCR division ===================================####
+###Lowering the overall Contribution
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR",
+new_contri_data$new_contri*0.60,
+new_contri_data$new_contri)
+#======>Lowering the Contribution for the following channels
+#For ETV Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR" &
+new_contri_data$Source_Var == "ETV" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.70,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR" &
+new_contri_data$Source_Var == "ETV" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.70,
+new_contri_data$new_contri)
+#For MAG Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR" &
+new_contri_data$Source_Var == "MAG" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.15,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR" &
+new_contri_data$Source_Var == "MAG" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.15,
+new_contri_data$new_contri)
+#For ROP Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR" &
+new_contri_data$Source_Var == "ROP" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*30,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HCR" &
+new_contri_data$Source_Var == "ROP" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*30,
+new_contri_data$new_contri)
+##===================================for HLD division ========================================####
+###Lowering the overall Contribution (as no chn drivers a larger change)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HLD",
+new_contri_data$new_contri*0.58,
+new_contri_data$new_contri)
+##===================================for HWR division ========================================####
+###Lowering the overall Contribution (as no chn drivers a larger change)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "HWR",
+new_contri_data$new_contri*0.60,
+new_contri_data$new_contri)
+##===============================for IHP division =====================================##
+###Increasing the Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP",
+new_contri_data$new_contri*1.1,
+new_contri_data$new_contri)
+# For MAG Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP" &
+new_contri_data$Source_Var == "MAG" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.1,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP" &
+new_contri_data$Source_Var == "MAG" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.1,
+new_contri_data$new_contri)
+# For STV Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP" &
+new_contri_data$Source_Var == "STV" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.2,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP" &
+new_contri_data$Source_Var == "STV" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.2,
+new_contri_data$new_contri)
+# For SOP Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP" &
+new_contri_data$Source_Var == "SOP" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.3,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "IHP" &
+new_contri_data$Source_Var == "SOP" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.3,
+new_contri_data$new_contri)
+##=============================for KID division =====================================#
+#================>Lowering the Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "KID",
+new_contri_data$new_contri*0.70,
+new_contri_data$new_contri)
+##For ETV Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "KID" &
+new_contri_data$Source_Var == "ETV" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.65,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "KID" &
+new_contri_data$Source_Var == "ETV" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.65,
+new_contri_data$new_contri)
+##For PSE OTH AND EML Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "KID" &
+new_contri_data$Source_Var %in% c("PSE","OTH","EML")&
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.65,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "KID" &
+new_contri_data$Source_Var %in% c("PSE","OTH","EML")&
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.65,
+new_contri_data$new_contri)
+##============================== for MEN division ================================#
+#===================> Lowering the Direct Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MEN",
+new_contri_data$new_contri*0.55,
+new_contri_data$new_contri)
+# For TVS Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MEN" &
+new_contri_data$Source_Var == "TVS" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.5,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MEN" &
+new_contri_data$Source_Var == "TVS" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.5,
+new_contri_data$new_contri)
+# For EML  Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MEN" &
+new_contri_data$Source_Var == "EML" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.5,
+new_contri_data$new_contri)
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MEN" &
+new_contri_data$Source_Var == "EML" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.5,
+new_contri_data$new_contri)
+##================================= for MFD division =================================###
+#==============================Lowering the Direct Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MFD",
+new_contri_data$new_contri*0.65,
+new_contri_data$new_contri)
+#FOR MAG Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MFD"&
+new_contri_data$Source_Var == "MAG" &
+new_contri_data$Destn == "STR",
+new_contri_data$new_contri*0.1,
+new_contri_data$new_contri)
+#FOR MAG Channel
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "MFD"&
+new_contri_data$Source_Var == "MAG" &
+new_contri_data$Destn != "STR",
+new_contri_data$new_contri*0.1,
+new_contri_data$new_contri)
+##===============================for OTH division ============================================##
+###Lowering the Overall Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "OTH",
+new_contri_data$new_contri*0.65,
+new_contri_data$new_contri)
+##===============================for OTL division ============================================##
+###Increasing the Direct Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "OTL",
+new_contri_data$new_contri*1.1,
+new_contri_data$new_contri)
+##===============================for PER division ============================================##
+###Increasing the Direct Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "PER",
+new_contri_data$new_contri*1.01,
+new_contri_data$new_contri)
+##===============================for PRF division ============================================##
+###Increasing the Direct Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "PRF",
+new_contri_data$new_contri*0.80,
+new_contri_data$new_contri)
+##===============================for SHL division =========================================>
+##Lowering the Overall Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "SHL",
+new_contri_data$new_contri*0.30,
+new_contri_data$new_contri)
+##===============================for SPG division =========================================>
+##Lowering the Overall Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "SPG",
+new_contri_data$new_contri*0.81,
+new_contri_data$new_contri)
+##===============================for SHO division =========================================>
+##Lowering the Overall Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "SHO",
+new_contri_data$new_contri*0.8,
+new_contri_data$new_contri)
+##============================ for TOY division ============================================>
+###Lowering the Overall Contribution for the overall division
+new_contri_data$new_contri <- ifelse(new_contri_data$Div_Name == "TOY",
+new_contri_data$new_contri*0.30,
+new_contri_data$new_contri)
+#
+# new_contri_data<-rbind(new_contri_data,new_contri_data_tot)
+write.csv(new_contri_data,paste(working_dir,"/new_contri_STR.csv",sep=""),row.names = F)
+#
+# sum(new_contri_data$new_contri)
+# sum(new_contri_data$Contri_Adjusted)
+#
+# sum(new_contri_data$Contri_Adjusted)-sum(new_contri_data$new_contri)
+#
+#
+# sum(subset(new_contri_data, new_contri_data$Div_Name=="CSG" &
+#           new_contri_data$Destination_Var =="STR" &
+#           new_contri_data$Source_Var == "MOB",
+#           select=c(new_contri)))
+#
+# sum(subset(new_contri_data,
+#              new_contri_data$Destination_Var =="STR" &
+#              new_contri_data$Source_Var == "MOB",
+#            select=c(new_contri)))
+working_dir<-"C:\Ganesha_Accenture\ZSelf\Kaggle\01MERCARI PRICE SUGGESTION CHALLENGE"
+working_dir<-"C:/Ganesha_Accenture/ZSelf/Kaggle/01MERCARI PRICE SUGGESTION CHALLENGE"
+Input_Path<-"./Input"
+Input_Path
+working_dir<-"C:/Ganesha_Accenture/ZSelf/Kaggle/01MERCARI PRICE SUGGESTION CHALLENGE"
+Input_Path<-paste(working_dir,"/Input")
+Input_Path
+Input_Path<-paste(working_dir,"/Input", sep = "")
+Input_Path
+MER_train_org<-read.table(file = 'train.tsv', sep = "\t", header = TRUE)
+#----------------------------Setting the Working Directory--------------------------------------#
+working_dir<-"C:/Ganesha_Accenture/ZSelf/Kaggle/01MERCARI PRICE SUGGESTION CHALLENGE"
+Input_Path<-paste(working_dir,"/Input", sep = "")
+MER_train_org<-read.table(file=(paste(Input_Path, '/train.tsv',sep = ""), sep = "\t", header = TRUE)
+paste(Input_Path,'/train.tsv',sep = "")
+MER_train_org<-read.table(file=(paste(Input_Path,'/train.tsv',sep = "")), sep = "\t", header = TRUE)
+library(randomForest)
+Path<-setwd("C:/Ganesha_Accenture/Ganesha_IVY/R/20180112 -- 0180114 Ivy Data Science Hackshop/04 DECISION TREES/CASE STUDY3")
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+Path<-setwd("C:/Ganesha_Accenture/Ganesha_IVY/R/20180112 -- 0180114 Ivy Data Science Hackshop/04 DECISION TREES/CASE STUDY3")
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+library(randomForest)
+set.seed(1)
+bag.boston <- randomForest(medv ~., data=Boston, subset=train,
+mtry=13,
+importance=T)
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+#Fitting the train model
+tree.boston <- tree(medv ~., Boston, subset = train)
+summary(tree.boston)
+plot(tree.boston)
+text(tree.boston, pretty = 0)
+library(tree)
+library(ISLR)
+library(MASS)
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+library(randomForest)
+set.seed(1)
+bag.boston <- randomForest(medv ~., data=Boston, subset=train,
+mtry=13,
+importance=T)
+bag.boston
+yhat.bag <- predict(bag.boston, newdata = Boston[-train, ])
+plot(yhat.bag, boston.test)
+mean((yhat - boston.test) ^ 2)
+abline(0, 1)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+tree.boston <- tree(medv ~., Boston, subset = train)
+summary(tree.boston)
+plot(tree.boston)
+text(tree.boston, pretty = 0)
+cv.boston <- cv.tree(tree.boston)
+cv.boston
+plot(cv.boston$size, cv.boston$dev, type = 'b')
+prune.boston <- prune.tree(tree.boston, best = 5)
+plot(prune.boston)
+text(prune.boston, pretty = 0)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+abline(0, 1)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+abline(0, 1)
+library(randomForest)
+set.seed(1)
+bag.boston <- randomForest(medv ~., data=Boston, subset=train,
+mtry=13,
+importance=T)
+bag.boston
+yhat.bag <- predict(bag.boston, newdata = Boston[-train, ])
+plot(yhat.bag, boston.test)
+abline(0, 1)
+mean((yhat.bag - boston.test) ^ 2)
+yhat.bag <- predict(bag.boston, newdata = Boston[-train, ])
+plot(yhat.bag, boston.test)
+abline(0, 1)
+mean((yhat.bag - boston.test) ^ 2)
+MSE_bagging<-mean((yhat.bag - boston.test) ^ 2)
+MSE_bagging
+set.seed(1)
+rf.boston <- randomForest(medv ~., data = Boston,
+subset = train,
+mtry = 6,
+importance = T)
+yhat.rf <- predict(rf.boston, newdata = Boston[-train, ])
+mean((yhat.rf - boston.test ) ^ 2)
+importance(rf.boston)
+varImpPlot(rf.boston)
+Path<-setwd("C:/Ganesha_Accenture/Ganesha_IVY/R/20180112 -- 0180114 Ivy Data Science Hackshop/04 DECISION TREES/CASE STUDY3")
+Carseats<-read.csv(paste(Path,"/02DATA/Carseats_Sales.csv",sep = ""))
+head(Carseats)
+str(Carseats)
+colSums(is.na(Carseats))
+High <- ifelse(Carseats$Sales <=8, 'No', 'Yes')
+Carseats <- data.frame(Carseats, High)
+tree.carseats <- tree(High ~. - Sales, Carseats)
+summary(tree.carseats)
+plot(tree.carseats)
+text(tree.carseats)
+tree.carseats
+nrow(Carseats)
+set.seed(2)
+train <- sample(1:nrow(Carseats), 200)
+Carseats.test <- Carseats[-train, ]
+High.test <- High[-train]
+tree.carseats <- tree(High ~. -Sales, Carseats, subset=train)
+tree.pred <- predict(tree.carseats, Carseats.test, type='class')
+table(tree.pred, High.test)
+(86+57)/200
+set.seed(3)
+cv.carseats <- cv.tree(tree.carseats, FUN=prune.misclass)
+set.seed(3)
+cv.carseats <- cv.tree(tree.carseats, FUN=prune.misclass)
+cv.carseats
+options(repr.plot.height = 3, repr.plot.width = 6)
+par(mfrow=c(1,2))
+plot(cv.carseats$size, cv.carseats$dev, type='b')
+plot(cv.carseats$k, cv.carseats$dev, type='b')
+plot(cv.carseats$size, cv.carseats$dev, type='a')
+plot(cv.carseats$k, cv.carseats$dev, type='a')
+plot(cv.carseats$k, cv.carseats$dev, type='b')
+plot(cv.carseats$size, cv.carseats$dev, type='b')
+plot(cv.carseats$k, cv.carseats$dev, type='c')
+plot(cv.carseats$size, cv.carseats$dev, type='c')
+plot(cv.carseats$size, cv.carseats$dev, type='b')
+plot(cv.carseats$k, cv.carseats$dev, type='b')
+plot(cv.carseats$size, cv.carseats$dev, type='b', main = "CV plot (terminal node size vs dev"))
+plot(cv.carseats$size, cv.carseats$dev, type='b', main = "CV plot (terminal node size vs dev")
+plot(cv.carseats$k, cv.carseats$dev, type='b',main = "CV plot (cost complexity vs dev)")
+plot(cv.carseats$size, cv.carseats$dev, type='b', main = "CV plot (terminal node size vs dev)")
+plot(cv.carseats$k, cv.carseats$dev, type='b',main = "CV plot (cost complexity vs dev)")
+prune.carseats <- prune.misclass(tree.carseats, best = 9)
+par(mforw = c(1,1))
+plot(prune.carseats)
+text(prune.carseats, pretty = 0)
+par(mforw = c(1,1))
+plot(prune.carseats)
+text(prune.carseats, pretty = 0)
+prune.carseats <- prune.misclass(tree.carseats, best = 9)
+par(mforw = c(1,1))
+plot(prune.carseats)
+text(prune.carseats, pretty = 0)
+text(prune.carseats, pretty = 0, main = "Summary Decision Tree post pruning")
+prune.carseats <- prune.misclass(tree.carseats, best = 9)
+par(mforw = c(1,1))
+plot(prune.carseats)
+text(prune.carseats, pretty = 0, main = "Summary Decision Tree post pruning")
+prune.carseats <- prune.misclass(tree.carseats, best = 9)
+par(mforw = c(1,1))
+plot(prune.carseats, main = "Summary Decision Tree post pruning")
+text(prune.carseats, pretty = 0)
+plot(prune.carseats, main = "Summary Decision Tree post pruning")
+plot(prune.carseats, main = "Summary Decision Tree post pruning")
+text(prune.carseats, pretty = 0)
+prune.carseats <- prune.misclass(tree.carseats, best = 9)
+par(mforw = c(1,1))
+plot(prune.carseats)
+text(prune.carseats, pretty = 0)
+tree.pred <- predict(prune.carseats, Carseats.test, type = 'class')
+table(tree.pred, High.test)
+(94+60)/200
+(86+57)/200
+T_1<-(86+57)/200
+T_1
+T2<-(94+60)/200
+T2
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+tree.boston <- tree(medv ~., Boston, subset = train)
+summary(tree.boston)
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+tree.boston <- tree(medv ~., Boston, subset = train)
+summary(tree.boston)
+plot(tree.boston)
+text(tree.boston, pretty = 0)
+summary(prune.carseats)
+Boston<-read.csv(paste(Path,"/02DATA/Boston.csv", sep = ""))
+head(Boston)
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+tree.boston <- tree(medv ~., Boston, subset = train)
+summary(tree.boston)
+plot(tree.boston)
+text(tree.boston, pretty = 0)
+cv.boston <- cv.tree(tree.boston)
+cv.boston
+plot(cv.boston$size, cv.boston$dev, type = 'b')
+plot(cv.boston$size, cv.boston$dev, type = 'b', main = "CV plot terminal size vs Dev")
+plot(cv.boston$size, cv.boston$dev, type = 'b', main = "CV plot terminal node size vs Dev")
+plot(cv.boston$size, cv.boston$dev, type = 'b', main = "CV plot terminal node size vs Deviance")
+prune.boston <- prune.tree(tree.boston, best = 5)
+plot(prune.boston)
+text(prune.boston, pretty = 0)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+abline(0, 1)
+mean((yhat - boston.test) ^ 2)
+cv.boston <- cv.tree(tree.boston)
+cv.boston
+plot(cv.boston$size, cv.boston$dev, type = 'b', main = "CV plot terminal node size vs Deviance")
+prune.boston <- prune.tree(tree.boston, best = 5)
+plot(prune.boston)
+text(prune.boston, pretty = 0)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+mean((yhat - boston.test) ^ 2)
+library(randomForest)
+yhat.bag <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat, boston.test)
+abline(0, 1)
+mean((yhat - boston.test) ^ 2)
+plot(yhat.bag, boston.test)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+abline(0, 1)
+abline(0, 1)
+yhat <- predict(tree.boston, newdata = Boston[-train, ])
+boston.test <- Boston[-train, 'medv']
+plot(yhat.bag, boston.test)
+abline(0, 1)
+mean((yhat - boston.test) ^ 2)
+bag.boston
+library(randomForest)
+set.seed(1)
+bag.boston <- randomForest(medv ~., data=Boston, subset=train,
+mtry=13,
+importance=T)
+bag.boston
+yhat.bag <- predict(bag.boston, newdata = Boston[-train, ])
+plot(yhat.bag, boston.test)
+abline(0, 1)
+MSE_bagging<-mean((yhat.bag - boston.test) ^ 2)
+MSE_bagging
+set.seed(1)
+rf.boston <- randomForest(medv ~., data = Boston,
+subset = train,
+mtry = 6,
+importance = T)
+yhat.rf <- predict(rf.boston, newdata = Boston[-train, ])
+mean((yhat.rf - boston.test ) ^ 2)
+importance(rf.boston)
+varImpPlot(rf.boston)
