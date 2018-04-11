@@ -1,0 +1,58 @@
+train = read.csv('./data/ad_org_train.csv', header = T, na.strings = c(""))
+test = read.csv('./data/ad_org_test.csv', header = T, na.strings = c(""))
+str(train)
+str(test)
+as.data.frame(colSums(is.na(train)))
+as.data.frame(colSums(is.na(test)))
+summary(train)
+library(zoo)
+library(dplyr)
+train %>%
+  select(vidid,views,likes,dislikes,comment) %>%
+  filter(comment == 870)
+library(devtools)
+install_github(repo = "modify", username = "skranz")
+library(microbenchmark)
+library(modify)
+modify(train, comment == 2008, comment = 870)
+str(train)
+View(train)
+train$views = as.integer(train$views)
+train$likes = as.integer(train$likes)
+train$dislikes = as.integer(train$dislikes)
+train$comment = as.integer(train$comment)
+test$views = as.integer(test$views)
+test$likes = as.integer(test$likes)
+test$dislikes = as.integer(test$dislikes)
+test$comment = as.integer(test$comment)
+median(train$views,na.rm = T)
+median(train$likes,na.rm = T)
+median(train$dislikes,na.rm = T)
+median(train$comment,na.rm = T)
+Vidid = train$vidid
+train$vidid = NULL
+train$published = NULL
+train$duration = NULL
+test$published = NULL
+test$duration = NULL
+test %>%
+  select(vidid,views,likes,dislikes,comment) %>%
+  filter(comment == 669)
+modify(test, vidid == "VID_14106", comment = 275)
+median(test$views,na.rm = T)
+median(test$likes, na.rm = T)
+median(test$dislikes, na.rm = T)
+median(test$comment, na.rm = T)
+View(test)
+train$views = as.factor(train$views)
+train$likes = as.factor(train$likes)
+train$dislikes = as.factor(train$dislikes)
+train$comment = as.factor(train$comment)
+library(randomForest)
+Model1 = randomForest(adview ~ views + likes + dislikes + comment + category, data = train, nodesize = 5)
+summary(Model1)
+plot((Model1))
+pred = predict(Model1, newdata = test, type = "class")
+pred = as.integer(pred)
+Solution = data.frame(vid_id = test$vidid, ad_view = pred, check.rows = F)
+write.csv(Solution, file = "Ad_view_pred.csv", row.names = F)

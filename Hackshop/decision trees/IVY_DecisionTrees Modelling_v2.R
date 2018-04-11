@@ -18,7 +18,7 @@ library(caTools)
 library(e1071)
 #Setting the working directory and Reading the dataset----
 getwd()
-setwd("C:/rWork/rProjects/R-in-Action/Hackshop")
+setwd("C:/rWork/rProjects/R-in-Action/Hackshop/decision trees")
 census=read.csv("census.csv")
 head(census)
 #Basic Exploration of the Data Set----
